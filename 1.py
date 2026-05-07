@@ -1,16 +1,10 @@
-def sum_or_mul(number1: int, number2: int):
-    result = number1 * number2
-    return result if result <= 1000 else number1 + number2
+from typing import List
 
 
-# Given Input:
+def string_filter(text: List[str]):
+    return [word.upper() for word in text if len(word) >= 4]
 
-# Case 1: number1 = 20, number2 = 30
-# Case 2: number1 = 40, number2 = 30
-# Expected Output:
 
-# The result is 600
-# The result is 70
+words = ["apple", "bat", "cherry", "dog", "elderberry"]
 
-print(sum_or_mul(20, 30))
-print(sum_or_mul(40, 30))
+print(string_filter(words))

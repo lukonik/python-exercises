@@ -1,17 +1,14 @@
-def function():
-    prev_number = 0
-    sum = 0
-    for value in range(9):
-        sum += value
-        print(f"Curr: {value}, Prev: {prev_number}, Sum: {sum}")
-        prev_number = value
+def merge_dicts(dict1: dict, dict2: dict):
+    dict_3 = {}
+    for key in (dict1 | dict2).keys():
+        if key in dict1 and key in dict2:
+            dict_3[key] = dict1[key] + dict2[key]
+        else:
+            dict_3[key] = dict1[key] if key in dict1 else dict2[key]
+    return dict_3
 
-# Printing current and previous number sum in a range(10)
-# Current Number 0 Previous Number 0 Sum: 0
-# Current Number 1 Previous Number 0 Sum: 1
-# Current Number 2 Previous Number 1 Sum: 3
-# ....
-# Current Number 8 Previous Number 7 Sum: 15
-# Current Number 9 Previous Number 8 Sum: 17
 
-function()
+dict_a = {"a": 10, "b": 20}
+dict_b = {"b": 5, "c": 15}
+
+print(merge_dicts(dict_a, dict_b))
