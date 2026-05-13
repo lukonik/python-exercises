@@ -1,0 +1,4 @@
+data = [("Alice", 88), ("Bob", 75), ("Charlie", 92)]
+
+
+print(sorted(data, key=lambda item: item[1]))
